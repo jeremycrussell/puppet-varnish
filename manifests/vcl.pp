@@ -142,7 +142,7 @@ class varnish::vcl (
 	ensure => directory,	
     }
     $includefiles = ["probes", "backends", "directors", "acls", "backendselection", "waf"]
-    includefile { $includefiles: }
+    varnish::vcl::includefile { $includefiles: }
   }
 
   
