@@ -1,5 +1,5 @@
 # == Class: varnish::vcl
-#
+nclude#
 # to change name/location of vcl file, use $varnish_vcl_conf in the main varnish class
 #
 # NOTE: though you can pass config for backends, directors, acls, probes and selectors
@@ -142,7 +142,7 @@ class varnish::vcl (
 	ensure => directory,	
     }
     $includefiles = ["probes", "backends", "directors", "acls", "backendselection", "waf"]
-    includefile { $includefiles: }
+    varnish::vcl::includefile { $includefiles: }
   }
 
   
